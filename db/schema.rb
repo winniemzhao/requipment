@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_09_204547) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_09_213702) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_204547) do
   end
 
   create_table "equipment", force: :cascade do |t|
-    t.string "type"
+    t.string "category"
     t.integer "condition"
     t.text "description"
     t.string "location"
@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_09_204547) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "request_date"
     t.datetime "exchange_availability"
     t.datetime "exchange_date"

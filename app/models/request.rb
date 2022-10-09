@@ -4,5 +4,5 @@ class Request < ApplicationRecord
 
   enum status: { pending: 0, accepted: 1, completed: 2 }
 
-  validates :description, length: { maximum: 500, too_long: "Maximum %{count} characters allowed." }
+  validates :message, length: { maximum: 500, too_long: "Maximum %{count} characters allowed." }, allow_nil: true
 end
