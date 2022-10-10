@@ -1,7 +1,7 @@
 <h1>Equipment index</h1>
 <ul>
   <% @equipment.each do |equip| %>
-    <li><%= equip.title %></li>
+    <li><%= equip.title %> by <%= equip.user.name %></li>
   <% end %>
 </ul>
 <%= link_to "Home", root_path %>
