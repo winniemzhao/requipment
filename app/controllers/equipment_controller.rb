@@ -29,6 +29,6 @@ class EquipmentController < ApplicationController
 
   def my_offerings
     # equipment where user == current_user
-    # @my_offerings = Equipment.where(current_user)
+    # @my_offerings = Equipment.where(user.id = current_user)
   end
 end

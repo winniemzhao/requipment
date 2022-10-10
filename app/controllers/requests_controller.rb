@@ -7,11 +7,11 @@ class RequestsController < ApplicationController
 
   end
 
-  def my_request
+  def show
 
   end
 
-  def edit_my_request
+  def edit
 
   end
 
@@ -24,18 +24,18 @@ class RequestsController < ApplicationController
   end
 
   def my_requests
-    # @my_requests = Request.where(current_user)
+    # @my_requests = Request.where(user.id = current_user)
   end
 
   def my_offering_requests
 
   end
 
-  def edit_my_offering_request
+  def edit_offering_request
 
   end
 
-  def update_my_offering_request
+  def update_offering_request
 
   end
 end

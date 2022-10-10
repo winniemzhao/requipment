@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   get "/my-offerings", to: "equipment#my_offerings", as: :my_offerings
 
   get "/my-offerings-requests", to: "requests#my_offering_requests", as: :my_offering_requests
-  get "/my-offerings-requests/:id/edit", to: "requests#edit_offering_requests", as: :edit_my_offering_request
-  patch "my-offerings-requests/:id", to: "requests#update_offering_requests", as: :update_my_offering_request
+  get "/my-offerings-requests/:id/edit", to: "requests#edit_offering_request", as: :edit_my_offering_request
+  patch "my-offerings-requests/:id", to: "requests#update_offering_request", as: :update_my_offering_request
 
 
 end
