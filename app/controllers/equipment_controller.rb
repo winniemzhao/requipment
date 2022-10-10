@@ -26,4 +26,9 @@ class EquipmentController < ApplicationController
   def destroy
 
   end
+
+  def my_offerings
+    # equipment where user == current_user
+    # @my_offerings = Equipment.where(current_user)
+  end
 end
