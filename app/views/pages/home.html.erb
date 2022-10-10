@@ -4,3 +4,9 @@
 <p>REcover with the right tools</p>
 <p>REduce medical costs</p>
 <p>REquip yourself</p>
+
+<%= link_to "All Equipment", equipment_index_path %>
+<% if user_signed_in? %>
+  <%= link_to "My Requests", my_requests_path %>
+  <%= link_to "My Offerings", my_offerings_path %>
+<% end %>

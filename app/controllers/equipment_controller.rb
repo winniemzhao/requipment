@@ -2,7 +2,7 @@ class EquipmentController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-
+    @equipment = Equipment.all
   end
 
   def show
