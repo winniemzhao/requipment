@@ -6,7 +6,7 @@ class EquipmentController < ApplicationController
   end
 
   def show
-
+    @current_equipment = Equipment.find(params[:id])
   end
 
   def new
