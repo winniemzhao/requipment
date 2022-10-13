@@ -1,3 +1,6 @@
-<h1>Equipment Show Page</h1>
+<h1><%= @current_equipment.title %></h1>
+<p><%= @current_equipment.user.name %></p>
+<p><%= @current_equipment.category %></p>
+
 <%= link_to "Home", root_path %>
 <%= link_to "All Equipment", equipment_index_path %>
