@@ -1,5 +1,14 @@
 <h1>New equipment page</h1>
-<%#= simple_form %>
-<%# end %>
+  <%= simple_form_for(@equipment) do |f| %>
+    <%= f.input :title, placeholder: 'Title of your post' %>
+    <%= f.input :category, collection: %w[Bathroom Bedroom Entrance/Exit Living Mobility Productivity] %>
+    <%= f.input :product, collection: %w[Accessories Bath/Grab_Rails Bath/Shower_Seats Change_Tables Commodes Lift/Transfer Toilet_Safety_Frames Beds Ramps Bikes/Trikes Car_Seats Gait_Trainers/Walking_Assists Wheelchair Wheelchair_Seating Mobility_Scooter Canes Crutches Walkers/Rollators Standers Strollers Chairs/Recliners Other] %>
+    <%= f.input :population, collection: %w[Pediatric Adult Bariatric Any] %>
+    <%= f.input :condition, collection: %w[like_new gently_used moderately_used well_loved for_parts] %>
+    <%= f.input :description, placeholder: "Provide a description of your equipment" %>
+    <%= f.input :location, placeholder: "Your address or major intersection" %>
+    <%= f.input :photo, label: "Upload a photo", as: :file %>
+    <%= f.submit "Post your Equipment", class: "btn-flat remove-btn-border" %>
+  <% end %>
 
 <%= link_to "Home", root_path %>
