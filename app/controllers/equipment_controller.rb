@@ -40,8 +40,7 @@ class EquipmentController < ApplicationController
   end
 
   def my_offerings
-    # equipment where user == current_user
-    # @my_offerings = Equipment.where(user.id = current_user)
+    @my_offerings = Equipment.where(user_id: current_user)
   end
 
   private
