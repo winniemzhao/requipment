@@ -35,7 +35,8 @@ class EquipmentController < ApplicationController
   end
 
   def destroy
-
+    @equipment.destroy
+    redirect_to my_offerings_path, status: :see_other, notice: "Your equipment was successfully deleted."
   end
 
   def my_offerings
