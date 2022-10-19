@@ -19,7 +19,6 @@ class RequestsController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
@@ -35,7 +34,7 @@ class RequestsController < ApplicationController
   end
 
   def my_requests
-    # @my_requests = Request.where(user.id = current_user)
+    @requests = Request.where(user_id: current_user)
   end
 
   def my_offering_requests
