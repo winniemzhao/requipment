@@ -33,7 +33,8 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-
+    @request.destroy
+    redirect_to my_requests_path, status: :see_other, notice: "Your request was successfully deleted."
   end
 
   def my_requests
