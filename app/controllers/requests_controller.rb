@@ -67,6 +67,6 @@ class RequestsController < ApplicationController
   end
 
   def request_params
-    params.require(:request).permit(:exchange_availability, :message)
+    params.require(:request).permit(:exchange_availability, :message, :status)
   end
 end
