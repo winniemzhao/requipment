@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_equipment, only: %i[new create my_offering_requests]
+  before_action :set_equipment, only: %i[new create my_offering_requests edit_offering_request update_offering_request]
   before_action :set_request, only: %i[show edit update destroy edit_offering_request update_offering_request]
 
   def new
@@ -49,7 +49,11 @@ class RequestsController < ApplicationController
   end
 
   def update_offering_request
-
+    if @request.update!(request_params)
+      redirect_to equipment_my_offering_requests_path(@equipment), notice: "You successfully updated the status of the request."
+    else
+      render :edit, status: 422
+    end
   end
 
   private

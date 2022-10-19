@@ -7,7 +7,7 @@
       <p>Request date of exchange:<%= request.exchange_availability.strftime("%B %e, %Y at %l:%M %p") %></p>
       <p>Message: <%= request.message %></p>
       <p>Status: <%= request.status %></p>
-      <%= link_to "Edit status" %>
+      <%= link_to "Edit status", equipment_edit_offering_request_path(@equipment, request) %>
     </li>
   <% end %>
 </ul>
