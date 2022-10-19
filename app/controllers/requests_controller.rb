@@ -22,11 +22,14 @@ class RequestsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
+    if @request.update!(request_params)
+      redirect_to my_requests_path, notice: "Your request was successfully updated."
+    else
+      render :edit, status: 422
+    end
   end
 
   def destroy
