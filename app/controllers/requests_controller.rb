@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_equipment, only: %i[new create]
+  before_action :set_equipment, only: %i[new create my_offering_requests]
   before_action :set_request, only: %i[show edit update destroy edit_offering_request update_offering_request]
 
   def new
@@ -42,11 +42,10 @@ class RequestsController < ApplicationController
   end
 
   def my_offering_requests
-
+    @my_offering_requests = Request.where(equipment_id: @equipment)
   end
 
   def edit_offering_request
-
   end
 
   def update_offering_request

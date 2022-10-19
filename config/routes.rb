@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :equipment do
     resources :requests, only: %i[new create]
+    get "/requests", to: "requests#my_offering_requests", as: :my_offering_requests
   end
 
   get "/my-requests", to: "requests#my_requests", as: :my_requests
@@ -13,9 +14,9 @@ Rails.application.routes.draw do
 
   get "/my-offerings", to: "equipment#my_offerings", as: :my_offerings
 
-  get "/my-offerings-requests", to: "requests#my_offering_requests", as: :my_offering_requests
-  get "/my-offerings-requests/:id/edit", to: "requests#edit_offering_request", as: :edit_my_offering_request
-  patch "my-offerings-requests/:id", to: "requests#update_offering_request", as: :update_my_offering_request
+  # get "/my-offering-requests", to: "requests#my_offering_requests", as: :my_offering_requests
+  get "/my-offering-requests/:id/edit", to: "requests#edit_offering_request", as: :edit_my_offering_request
+  patch "my-offering-requests/:id", to: "requests#update_offering_request", as: :update_my_offering_request
 
 
 end

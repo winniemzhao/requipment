@@ -1,3 +1,18 @@
-<h1>Requests for this equipment offering</h1>
+<h1>Requests for <%= @equipment.title %></h1>
+
+<ul>
+  <% @my_offering_requests.each do |request| %>
+    <li>
+      <p>Requested by: <%= request.user.name %></p>
+      <p>Request date of exchange:<%= request.exchange_availability.strftime("%B %e, %Y at %l:%M %p") %></p>
+      <p>Message: <%= request.message %></p>
+      <p>Status: <%= request.status %></p>
+      <%= link_to "Edit status" %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to "Home", root_path %>
+
+
 <%#= link_to "Equipment offering", equipment_path(@this_equipment) %>
