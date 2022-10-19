@@ -1,7 +1,7 @@
 <h1>Equipment index</h1>
 <ul>
   <% @equipment.each do |equip| %>
-    <li><%= link_to equip.title, equipment_path(equip)</li>
+    <li><%= link_to equip.title, equipment_path(equip) %></li>
   <% end %>
 </ul>
 <%= link_to "Home", root_path %>

@@ -1,3 +1,11 @@
 <h1>My Equipment Offerings</h1>
 
+<ul>
+<% @my_offerings.each do |equipment| %>
+  <li>
+    <%= link_to equipment.title, equipment_path(equipment) %>
+  </li>
+<% end %>
+</ul>
+
 <%= link_to "Home", root_path %>
