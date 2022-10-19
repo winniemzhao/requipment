@@ -1,6 +1,15 @@
 <h1>Edit equipment page</h1>
 
-<%#= simple_form %>
-<%# end %>
+  <%= simple_form_for(@equipment) do |f| %>
+    <%= f.input :title, placeholder: @equipment.title %>
+    <%= f.input :category, collection: %w[Bathroom Bedroom Entrance/Exit Living Mobility Productivity], selected: @equipment.category %>
+    <%= f.input :product, collection: %w[Accessories Bath/Grab_Rails Bath/Shower_Seats Change_Tables Commodes Lift/Transfer Toilet_Safety_Frames Beds Ramps Bikes/Trikes Car_Seats Gait_Trainers/Walking_Assists Wheelchair Wheelchair_Seating Mobility_Scooter Canes Crutches Walkers/Rollators Standers Strollers Chairs/Recliners Other], selected: @equipment.product %>
+    <%= f.input :population, collection: %w[Pediatric Adult Bariatric Any], selected: @equipment.population %>
+    <%= f.input :condition, collection: %w[like_new gently_used moderately_used well_loved for_parts], selected: @equipment.condition %>
+    <%= f.input :description, placeholder: @equipment.description %>
+    <%= f.input :location, placeholder: @equipment.location %>
+    <%= f.input :photo, label: "Change photo", as: :file %>
+    <%= f.submit "Update your Equipment", class: "btn-flat remove-btn-border" %>
+  <% end %>
 
 <%= link_to "Home", root_path %>
