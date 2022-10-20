@@ -1,3 +1,9 @@
 <h1>Edit status of request for this offering</h1>
+
+  <%= simple_form_for(@request, url: equipment_update_offering_request_path(@equipment)) do |f| %>
+    <%= f.input :status, collection: %w[pending accepted completed], selected: @request.status %>
+    <%= f.submit 'Change status of equipment request', class: 'btn-flat remove-btn-border' %>
+  <% end %>
+
 <%= link_to "Home", root_path %>
 <%= link_to "Requests for my equipment offerings", my_offerings_path %>

@@ -7,3 +7,8 @@
 <%= link_to equipment_path(@equipment), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{@equipment.title}?"} do %>
   <%= "Delete" %>
 <% end %>
+<% if current_user = @equipment.user %>
+  <%= link_to "View equipment requests", equipment_my_offering_requests_path(@equipment) %>
+<% else %>
+  <%= link_to "Request this equipment", new_equipment_request_path(@equipment) %>
+<% end %>

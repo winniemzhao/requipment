@@ -1,2 +1,10 @@
 <h1>My equipment requests</h1>
+
+<ul>
+  <% @requests.each do |request| %>
+    <li>
+      <%= link_to request.equipment.title, my_request_path(request) %>
+    </li>
+  <% end %>
+</ul>
 <%= link_to "Home", root_path %>
